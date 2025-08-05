@@ -10,6 +10,15 @@ return {
     },
     keys = {
       {
+        "<leader>fP",
+        function()
+          require("telescope.builtin").find_files({
+            cwd = require("lazy.core.config").options.root,
+          })
+        end,
+        desc = "Find Plugin File",
+      },
+      {
         ";f",
         function()
           local builtin = require("telescope.builtin")
@@ -18,7 +27,7 @@ return {
             hidden = true,
           })
         end,
-        desc = "List files in current working directory, respects .gitignore",
+        desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
         ";r",
@@ -28,7 +37,7 @@ return {
             additional_args = { "--hidden" },
           })
         end,
-        desc = "Search for a string in your current working directory and get results live as you type, respects .gitingore",
+        desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
       {
         "\\\\",
@@ -36,7 +45,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.buffers()
         end,
-        desc = "List open buffers",
+        desc = "Lists open buffers",
       },
       {
         ";t",
@@ -44,7 +53,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.help_tags()
         end,
-        desc = "List available help tags and open a new window with the relevant help info on <cr>",
+        desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
       },
       {
         ";;",
@@ -60,7 +69,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.diagnostics()
         end,
-        desc = "List diagnostics for all open buffers or a specific buffer",
+        desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
         ";s",
@@ -68,7 +77,15 @@ return {
           local builtin = require("telescope.builtin")
           builtin.treesitter()
         end,
-        desc = "List function names, variables, from Tresitter",
+        desc = "Lists Function names, variables, from Treesitter",
+      },
+      {
+        ";c",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.lsp_incoming_calls()
+        end,
+        desc = "Lists LSP incoming calls for word under the cursor",
       },
       {
         "sf",
@@ -98,6 +115,9 @@ return {
       local actions = require("telescope.actions")
       local fb_actions = require("telescope").extensions.file_browser.actions
 
+      -- ensure opts.defaults != nil
+      opts.defaults = opts.defaults or {}
+
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
         wrap_results = true,
         layout_strategy = "horizontal",
@@ -120,7 +140,7 @@ return {
       opts.extensions = {
         file_browser = {
           theme = "dropdown",
-          -- disable netrw and use telescope-file-browser in its place
+          -- disables netrw and use telescope-file-browser in its place
           hijack_netrw = true,
           mappings = {
             -- your custom insert mode mappings
@@ -147,7 +167,6 @@ return {
           },
         },
       }
-
       telescope.setup(opts)
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
