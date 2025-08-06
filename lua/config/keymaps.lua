@@ -13,8 +13,12 @@ keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 keymap.set("n", "te", ":tabedit")
 
 -- Indent line
+-- Normal mode
 keymap.set("n", "<Tab>", ">>", opts)
 keymap.set("n", "<S-Tab>", "<<", opts)
+-- Visual Line mode
+keymap.set("v", "<Tab>", ">gv", opts)
+keymap.set("v", "<S-Tab>", "<gv", opts)
 
 -- Split windown
 keymap.set("n", "ss", ":split<Return>", opts)
