@@ -191,4 +191,9 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
+
+  {
+    "folke/flash.nvim",
+    enabled = false,
+  },
 }
