@@ -176,6 +176,7 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      disable_auto_open = true,
       filesystem = {
         filtered_items = {
           visible = true, -- Show hidden files
