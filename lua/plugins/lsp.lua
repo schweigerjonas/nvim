@@ -15,6 +15,7 @@ return {
         "html-lsp",
         "angular-language-server",
         "gopls",
+        "arduino-language-server",
       })
     end,
   },
