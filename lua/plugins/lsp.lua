@@ -31,7 +31,7 @@ return {
             "-cli-config",
             vim.fn.expand("~/.arduino15/arduino-cli.yaml"),
             "-fqbn",
-            "arduino:avr:uno",
+            "arduino:avr:uno", // change to currently used board type
           },
           capabilities = {
             textDocument = {
