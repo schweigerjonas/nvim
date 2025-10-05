@@ -20,6 +20,7 @@ return {
         "angular",
         "arduino",
         "dockerfile",
+        "glimmer",
       },
     },
     config = function(_, opts)
