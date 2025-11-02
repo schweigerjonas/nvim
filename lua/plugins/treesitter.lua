@@ -18,6 +18,7 @@ return {
         "scss",
         "sql",
         "angular",
+        "svelte",
         "arduino",
         "dockerfile",
         "glimmer",
