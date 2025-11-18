@@ -19,6 +19,8 @@ return {
         "gopls",
         "clangd",
         "arduino-language-server",
+        "markdownlint-cli2",
+        "markdown-toc",
       })
     end,
   },
