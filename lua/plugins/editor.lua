@@ -185,4 +185,11 @@ return {
     "folke/flash.nvim",
     enabled = false,
   },
+
+  {
+    "chomosuke/typst-preview.nvim",
+    lazy = false,
+    version = "1.*",
+    opts = {},
+  },
 }

@@ -21,6 +21,7 @@ return {
         "arduino-language-server",
         "markdownlint-cli2",
         "markdown-toc",
+        "tinymist",
       })
     end,
   },
