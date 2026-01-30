@@ -172,24 +172,4 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
-
-  {
-    "iamcco/markdown-preview.nvim",
-    ft = "markdown",
-    config = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
-
-  {
-    "folke/flash.nvim",
-    enabled = false,
-  },
-
-  {
-    "chomosuke/typst-preview.nvim",
-    lazy = false,
-    version = "1.*",
-    opts = {},
-  },
 }
